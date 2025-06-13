@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #001607;
+    border-radius: 15px;
+    text-align: center;
+    width: 600px;
+}
+.full-width{
+    padding: 5px;
+}
+mat-card-actions {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 5px 0;
+}

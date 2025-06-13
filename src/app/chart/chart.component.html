@@ -1,0 +1,29 @@
+<div class="chart-card" *ngIf="movie">
+    <mat-card appearance="outlined">
+        <img mat-card-image src="{{movie.poster}}" [alt]="movie.title">
+        <mat-card-content>
+            <h4>New Reservation - {{movie.title}}</h4>
+            <mat-form-field class="full-width">
+                <mat-label>Title</mat-label>
+                <input type="text" matInput [value]="movie.title" disabled>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Date</mat-label>
+                <input type="text" matInput [value]="utils.formatDate(movie.startDate)" disabled>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Ticket Count</mat-label>
+                <input type="number" matInput [(ngModel)]="ticketCount" (input)="updatePrice()" min="1">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Price (€)</mat-label>
+                <input type="text" matInput [value]="totalPrice" disabled>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="doOrder()">
+                <i class="fa-solid fa-cart-shopping"></i> REZERVIŠI
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

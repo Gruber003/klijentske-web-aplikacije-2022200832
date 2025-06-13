@@ -1,0 +1,116 @@
+html, body {
+    height: 100%;
+    background-color: #1a1a1a;
+    color: aliceblue;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+ 
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.example-card {
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1a3d34;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.example-card:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    padding: 8px;
+    gap: 1px;
+}
+
+.title, .subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: gray;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/3;
+}
+
+.image-container .description {
+    font-size: 12px;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.image-container:hover .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card-footer {
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    color: lightgray;
+    margin-top: auto;
+}
+
+h3 {
+    text-align: center;
+    color: #ff4c4c;
+}
+
+p[style="color: red"] {
+    text-align: center;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

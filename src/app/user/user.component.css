@@ -1,0 +1,72 @@
+.profile-card {
+    max-width: 350px;
+    margin: 20px auto;
+    position: relative;
+    text-align: center;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #0d9c00;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.settings-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #666;
+}
+
+.settings-btn:hover {
+    color: #000;
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.empty-cart {
+    font-size: 18px;
+    font-weight: bold;
+    color: gray;
+}
+
+.cart-list {
+    text-align: left;
+}
+
+.cart-list h3 {
+    text-align: center;
+}
+
+.cart-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.movie-title {
+    font-weight: bold;
+}
+
+.movie-price {
+    color: #499940;
+    font-weight: bold;
+}
+

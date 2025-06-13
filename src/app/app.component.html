@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <div class="nav-content">
+        <span>
+            <i class="fa-solid"></i> SINGI-FLIX
+        </span>
+        <span class="spacer"></span>
+        <a routerLink="/" mat-button>
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+        <a routerLink="/search" mat-button>
+            <i class="fa-solid fa-search"></i> Search
+        </a>
+        <a routerLink="/login" mat-button *ngIf="!service.getActiveUser()">
+            <i class="fa-solid fa-play"></i> Login
+        </a>
+        <a routerLink="/user" mat-button *ngIf="service.getActiveUser()">
+            <i class="fa-solid fa-user"></i> Profile
+        </a>
+        <button mat-button *ngIf="service.getActiveUser()" (click)="doLogout()">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+    </div>
+</mat-toolbar>
+<router-outlet />

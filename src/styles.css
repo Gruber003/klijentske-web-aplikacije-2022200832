@@ -1,0 +1,114 @@
+html,
+body {
+    height: 100%;
+    background-color: #292929;
+    color: #f0f0f0;
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    ;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.example-card {
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 8px;
+    gap: 1px;
+}
+
+.title,
+.subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #888;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/3;
+}
+
+.image-container .description {
+    font-size: 12px;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.image-container:hover .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card-footer {
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    color: lightgray;
+    margin-top: auto;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loading {
+    text-align: center;
+    width: 700px;
+    height: 300px;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+ng-container {
+    text-align: center;
+}

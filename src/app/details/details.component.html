@@ -1,0 +1,36 @@
+<div class="wrapper" *ngIf="movie">
+    <div class="movie-header">
+        <div class="movie-card">
+            <img mat-card-image [src]="(movie!.poster)" [alt]="movie.title">
+        </div>
+        <div class="movie-info">
+            <h2>{{movie.title}}</h2>
+            <p><b>Datum: </b><br>  {{utils.formatDate(movie.startDate)}}</p>
+            <p><b>Trajanje: </b><br> {{movie.runTime}} min.</p>
+            <p><b>Zanr: </b><br>
+                <span *ngFor="let genre of movie.movieGenres; let i = index">
+                    {{genre.genre.name}}{{i < movie.movieGenres.length - 1 ? ', ' : '' }}
+                </span>
+            </p>
+            <p><b>Glumci: </b><br>
+                <span *ngFor="let actor of movie.movieActors; let i = index">
+                    {{actor.actor.name}}{{i < movie.movieActors.length - 1 ? ', ' : '' }}
+                </span>
+            </p>
+            <div><b>Opis: </b><br>
+                <br>
+                <div class="description-box">
+                    {{movie.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-footer">
+        <a mat-button [routerLink]="['/details', movie.movieId,'chart']">
+            <i class="fa-solid fa-cart-shopping"></i> Book Now
+        </a>
+    </div>
+</div>
+
+<app-loading *ngIf="!movie" />
+

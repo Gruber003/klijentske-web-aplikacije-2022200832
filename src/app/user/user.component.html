@@ -1,0 +1,28 @@
+<mat-card class="profile-card" appearance="outlined">
+    <mat-card-header>
+        <div mat-card-avatar class="avatar">S</div>
+        <mat-card-title>SingiFlix Tester</mat-card-title>
+        <mat-card-subtitle>SingiFlix profil</mat-card-subtitle>
+        <button mat-icon-button class="settings-btn" (click)="doChangePassword()">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+    </mat-card-header>
+</mat-card>
+
+<div class="wrapper">
+    <div *ngIf="cart.length == 0" class="empty-cart">
+        <p>Nema dodatih projekcija!</p>
+    </div>
+    
+    <div *ngIf="cart.length > 0" class="cart-list">
+        <h3>Spisak projekcija</h3>
+        <ul>
+            <li *ngFor="let c of cart, let i = index">
+                <span class="movie-title">{{c.title}}</span>
+                <span class="movie-price">Number of Tickets - {{c.count}}</span>
+                <button mat-button color="warn" (click)="removeFromCart(i)">Ukloni</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
